@@ -38,6 +38,7 @@ void MainWindow::on_addressBookLabel_clicked()
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     ui->numberLabel->setText(myModel->getPhoneNumber(index.row()));
+    temp = myModel->getPhoneNumber(index.row());
 }
 
 
@@ -45,7 +46,7 @@ QString temp;
 
 void MainWindow::on_oneButton_clicked()
 {
-    myModel->setFilterString("1");
+
     if(temp.size() < 12){
         if(temp.size() == 3){
             temp.append("-");
@@ -55,6 +56,7 @@ void MainWindow::on_oneButton_clicked()
         temp.append("1");
         ui->numberLabel->setText(temp);
     }
+        myModel->setFilterString(temp);
 
 }
 
@@ -69,6 +71,7 @@ void MainWindow::on_twoButton_clicked()
     temp.append("2");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_threeButton_clicked()
@@ -82,6 +85,7 @@ void MainWindow::on_threeButton_clicked()
     temp.append("3");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_fourButton_clicked()
@@ -95,6 +99,7 @@ void MainWindow::on_fourButton_clicked()
     temp.append("4");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_fiveButton_clicked()
@@ -108,6 +113,7 @@ void MainWindow::on_fiveButton_clicked()
     temp.append("5");
     ui->numberLabel->setText(temp);
 }
+    myModel->setFilterString(temp);
 }
 
 void MainWindow::on_sixButton_clicked()
@@ -121,6 +127,7 @@ void MainWindow::on_sixButton_clicked()
     temp.append("6");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_sevenButton_clicked()
@@ -134,6 +141,7 @@ void MainWindow::on_sevenButton_clicked()
     temp.append("7");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_eightButton_clicked()
@@ -147,6 +155,7 @@ void MainWindow::on_eightButton_clicked()
     temp.append("8");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_nineButton_clicked()
@@ -160,6 +169,7 @@ void MainWindow::on_nineButton_clicked()
     temp.append("9");
     ui->numberLabel->setText(temp);
 }
+       myModel->setFilterString(temp);
 }
 
 void MainWindow::on_zeroButton_clicked()
@@ -173,6 +183,7 @@ void MainWindow::on_zeroButton_clicked()
     temp.append("0");
     ui->numberLabel->setText(temp);
 }
+     myModel->setFilterString(temp);
 }
 
 void MainWindow::on_callButton_clicked()
