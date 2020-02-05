@@ -41,10 +41,11 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
 }
 
 
-QString temp = "";
+QString temp;
 
 void MainWindow::on_oneButton_clicked()
 {
+    myModel->setFilterString("1");
     if(temp.size() < 12){
         if(temp.size() == 3){
             temp.append("-");
@@ -54,6 +55,7 @@ void MainWindow::on_oneButton_clicked()
         temp.append("1");
         ui->numberLabel->setText(temp);
     }
+
 }
 
 void MainWindow::on_twoButton_clicked()
