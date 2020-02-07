@@ -25,11 +25,11 @@ QVariant MyAddressBookModel::data(const QModelIndex &index, int role) const
     if(role == Qt::DisplayRole){
         switch(index.column()){
         case 0:
-            return firstNames.at(filteredIndex[index.row()] - 1);
+            return firstNames.at(filteredIndex[index.row()]);
         case 1:
-            return lastNames.at(filteredIndex[index.row()] - 1);
+            return lastNames.at(filteredIndex[index.row()]);
         case 2:
-            return phoneNumbers.at(filteredIndex[index.row()] - 1);
+            return phoneNumbers.at(filteredIndex[index.row()]);
         }
     }
     return QVariant();
@@ -54,6 +54,7 @@ void MyAddressBookModel::openFile(QString filePath)
     for (int i = 0; !in.atEnd(); i++){
         QString line = in.readLine();
         QStringList fields = line.split(",");
+
         if(i == 0) continue;
 
         firstNames.push_back(fields[0]);
@@ -71,9 +72,11 @@ QString MyAddressBookModel::getPhoneNumber(int index)
     return phoneNumbers.at(filteredIndex[index] - 1);
 }
 
+// filtered the starting number
 void MyAddressBookModel::setFilterString(QString fStr)
 {
     filteredIndex.clear();
+
     for(int i = 0; i < phoneNumbers.size(); i++){
         if (phoneNumbers[i].startsWith(fStr)){
             filteredIndex.push_back(i);

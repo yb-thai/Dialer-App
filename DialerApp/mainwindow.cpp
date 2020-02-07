@@ -26,6 +26,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_addressBookLabel_clicked()
 {
+    // open local file dialog
     QString fileName = QFileDialog::getOpenFileName(this,
                 tr("Open Address Book"), "",
                 tr("Adress Book (*.csv);; All Files (*)"));
@@ -35,13 +36,14 @@ void MainWindow::on_addressBookLabel_clicked()
     myModel->openFile(fileName);
 }
 
+// address table
 void MainWindow::on_tableView_clicked(const QModelIndex &index)
 {
     ui->numberLabel->setText(myModel->getPhoneNumber(index.row()));
     temp = myModel->getPhoneNumber(index.row());
 }
 
-
+// hold input from keypad
 QString temp;
 
 void MainWindow::on_oneButton_clicked()
