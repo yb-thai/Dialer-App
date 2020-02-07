@@ -69,7 +69,7 @@ void MyAddressBookModel::openFile(QString filePath)
 
 QString MyAddressBookModel::getPhoneNumber(int index)
 {
-    return phoneNumbers.at(filteredIndex[index] - 1);
+    return phoneNumbers.at(filteredIndex[index]);
 }
 
 // filtered the starting number

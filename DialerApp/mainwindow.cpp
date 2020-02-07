@@ -200,5 +200,7 @@ void MainWindow::on_backspaceLabel_clicked()
 {
     temp.chop(1);
     ui->numberLabel->setText(temp);
+    myModel->setFilterString(temp);
+
 
 }
