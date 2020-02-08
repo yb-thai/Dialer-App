@@ -22,6 +22,8 @@ public:
 
     void openFile(QString filePath);
     QString getPhoneNumber (int index);
+    QString getFirstNames (int index);
+    QString getLastNames (int index);
 
     void setFilterString(QString fStr);
 

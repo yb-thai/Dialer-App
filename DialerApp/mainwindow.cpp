@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->tableView->setModel(myModel);
 
+
 }
 
 
@@ -30,8 +31,6 @@ void MainWindow::on_addressBookLabel_clicked()
     QString fileName = QFileDialog::getOpenFileName(this,
                 tr("Open Address Book"), "",
                 tr("Adress Book (*.csv);; All Files (*)"));
-
-    std::cout << fileName.toStdString() << std::endl;
 
     myModel->openFile(fileName);
 }
@@ -55,6 +54,7 @@ void MainWindow::on_oneButton_clicked()
         } else if(temp.size() == 7){
             temp.append("-");
         }
+
         temp.append("1");
         ui->numberLabel->setText(temp);
     }
@@ -73,7 +73,7 @@ void MainWindow::on_twoButton_clicked()
     temp.append("2");
     ui->numberLabel->setText(temp);
 }
-       myModel->setFilterString(temp);
+    myModel->setFilterString(temp);
 }
 
 void MainWindow::on_threeButton_clicked()
@@ -186,14 +186,23 @@ void MainWindow::on_zeroButton_clicked()
     ui->numberLabel->setText(temp);
 }
      myModel->setFilterString(temp);
+
+
 }
 
 void MainWindow::on_callButton_clicked()
 {
+    QMessageBox warning;
+    if(temp.size() == 0){
+        warning.setText("Type in the number or select from phonebook");
+        warning.exec();
+    } else {
     QMessageBox calling;
     QString call = "Calling " + temp + "  ";
     calling.setText(call);
     calling.exec();
+    }
+
 }
 
 void MainWindow::on_backspaceLabel_clicked()

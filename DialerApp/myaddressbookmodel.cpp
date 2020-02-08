@@ -61,7 +61,7 @@ void MyAddressBookModel::openFile(QString filePath)
         lastNames.push_back(fields[1]);
         phoneNumbers.push_back(fields[7]);
 
-        filteredIndex.push_back(i);
+        filteredIndex.push_back(i-1);
     }
     file.close();
     emit layoutChanged();
@@ -72,15 +72,26 @@ QString MyAddressBookModel::getPhoneNumber(int index)
     return phoneNumbers.at(filteredIndex[index]);
 }
 
+
+
 // filtered the starting number
 void MyAddressBookModel::setFilterString(QString fStr)
 {
     filteredIndex.clear();
-
     for(int i = 0; i < phoneNumbers.size(); i++){
         if (phoneNumbers[i].startsWith(fStr)){
             filteredIndex.push_back(i);
         }
     }
+
+
+//    std::vector<int> temp;
+//    for(int i = 0; i < filteredIndex.size(); i++) {
+//        if (phoneNumbers[filteredIndex[i]].startsWith(fStr)) {
+//            temp.push_back(filteredIndex[i]);
+//        }
+//    }
+//    filteredIndex = temp;
+
     emit layoutChanged();
 }
