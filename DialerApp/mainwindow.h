@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "myaddressbookmodel.h"
 #include <vector>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -15,6 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 
 
 private slots:
@@ -34,8 +36,6 @@ private slots:
 
     void on_sixButton_clicked();
 
-    void on_sevenButton_clicked();
-
     void on_eightButton_clicked();
 
     void on_nineButton_clicked();
@@ -46,10 +46,18 @@ private slots:
 
     void on_backspaceLabel_clicked();
 
+    void on_sevenButton_clicked();
+
+    void on_starButton_clicked();
+
+    void on_pundButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     MyAddressBookModel *myModel;
     QString temp;
+
+
 
 };
 #endif // MAINWINDOW_H

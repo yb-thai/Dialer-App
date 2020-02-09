@@ -3,6 +3,8 @@
 #include <QFileDialog>
 #include <iostream>
 #include <QMessageBox>
+#include <QGraphicsDropShadowEffect>
+#include <QScrollBar>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +15,28 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     ui->tableView->setModel(myModel);
+
+    //enable MainWindow to be transparent
+    setAttribute(Qt::WA_TranslucentBackground);
+
+    // add drop shadow effect to dialer and phonebook
+    QGraphicsDropShadowEffect* dialerEffect = new QGraphicsDropShadowEffect();
+    QGraphicsDropShadowEffect* tableEffect = new QGraphicsDropShadowEffect();
+    QGraphicsDropShadowEffect* headerEffect = new QGraphicsDropShadowEffect();
+    dialerEffect->setBlurRadius(10);
+    tableEffect->setBlurRadius(10);
+    headerEffect->setBlurRadius(10);
+    ui->dialerGroupBox->setGraphicsEffect(dialerEffect);
+    ui->tableView->setGraphicsEffect(tableEffect);
+    ui->headerGroupBox->setGraphicsEffect(headerEffect);
+
+    // customize scroll bar on phone book
+    ui->tableView->verticalScrollBar()->setStyleSheet("background-color: Gray);");
+
+
+
+
+
 
 
 }
@@ -131,7 +155,6 @@ void MainWindow::on_sixButton_clicked()
 }
        myModel->setFilterString(temp);
 }
-
 void MainWindow::on_sevenButton_clicked()
 {
     if(temp.size() < 12){
@@ -143,8 +166,9 @@ void MainWindow::on_sevenButton_clicked()
     temp.append("7");
     ui->numberLabel->setText(temp);
 }
-       myModel->setFilterString(temp);
+    myModel->setFilterString(temp);
 }
+
 
 void MainWindow::on_eightButton_clicked()
 {
@@ -212,4 +236,34 @@ void MainWindow::on_backspaceLabel_clicked()
     myModel->setFilterString(temp);
 
 
+}
+
+
+
+void MainWindow::on_starButton_clicked()
+{
+    if(temp.size() < 12){
+        if(temp.size() == 3){
+            temp.append("-");
+    } else if(temp.size() == 7){
+        temp.append("-");
+    }
+    temp.append("*");
+    ui->numberLabel->setText(temp);
+}
+     myModel->setFilterString(temp);
+}
+
+void MainWindow::on_pundButton_clicked()
+{
+    if(temp.size() < 12){
+        if(temp.size() == 3){
+            temp.append("-");
+    } else if(temp.size() == 7){
+        temp.append("-");
+    }
+    temp.append("#");
+    ui->numberLabel->setText(temp);
+}
+     myModel->setFilterString(temp);
 }

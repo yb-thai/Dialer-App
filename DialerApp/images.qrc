@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../delete-512.png</file>
+        <file>../button_add-512.png</file>
+        <file>../phone(1).png</file>
+    </qresource>
+</RCC>
