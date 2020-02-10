@@ -338,8 +338,8 @@ border-radius: 15px;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset>
-       <normaloff>C:/Users/Thai/Desktop/delete-512.png</normaloff>C:/Users/Thai/Desktop/delete-512.png</iconset>
+      <iconset resource="images.qrc">
+       <normaloff>:/delete-512.png</normaloff>:/delete-512.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -373,7 +373,7 @@ border-radius: 15px;
        <x>100</x>
        <y>50</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -383,7 +383,7 @@ border-radius: 15px;
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">
+      <string notr="true">border-radius: 15px;
 border: none;</string>
      </property>
      <property name="frameShadow">
@@ -402,7 +402,7 @@ border: none;</string>
        <x>170</x>
        <y>50</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -431,7 +431,7 @@ border: none;</string>
        <x>30</x>
        <y>110</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -460,7 +460,7 @@ border: none;</string>
        <x>100</x>
        <y>110</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -489,7 +489,7 @@ border: none;</string>
        <x>170</x>
        <y>110</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -518,7 +518,7 @@ border: none;</string>
        <x>30</x>
        <y>170</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -547,7 +547,7 @@ border: none;</string>
        <x>100</x>
        <y>170</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -576,7 +576,7 @@ border: none;</string>
        <x>170</x>
        <y>170</y>
        <width>21</width>
-       <height>20</height>
+       <height>16</height>
       </rect>
      </property>
      <property name="font">
@@ -670,42 +670,6 @@ border-radius: 15px;
     <attribute name="verticalHeaderVisible">
      <bool>false</bool>
     </attribute>
-   </widget>
-   <widget class="QPushButton" name="addressBookLabel">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>40</y>
-      <width>121</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Malgun Gothic</family>
-      <pointsize>9</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: white;
-border: none;
-border-radius: 15px;</string>
-    </property>
-    <property name="text">
-     <string>Address Book</string>
-    </property>
-    <property name="icon">
-     <iconset resource="images.qrc">
-      <normaloff>:/button_add-512.png</normaloff>:/button_add-512.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>32</width>
-      <height>22</height>
-     </size>
-    </property>
    </widget>
    <widget class="QLabel" name="numberLabel">
     <property name="geometry">
@@ -921,8 +885,51 @@ border-radius: 15px;</string>
      <height>22</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Malgun Gothic</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QMenu" name="menuAdd_Contact">
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(99, 99, 99)</string>
+    </property>
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionAdd_Contact"/>
+    <addaction name="actionExit_Dialer"/>
+   </widget>
+   <addaction name="menuAdd_Contact"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAdd_Contact">
+   <property name="text">
+    <string>Add Contact</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Malgun Gothic</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionExit_Dialer">
+   <property name="text">
+    <string>Exit Dialer</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Malgun Gothic</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="images.qrc"/>

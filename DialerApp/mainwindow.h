@@ -20,7 +20,6 @@ public:
 
 
 private slots:
-    void on_addressBookLabel_clicked();
 
     void on_tableView_clicked(const QModelIndex &index);
 
@@ -51,6 +50,10 @@ private slots:
     void on_starButton_clicked();
 
     void on_pundButton_clicked();
+
+    void on_actionAdd_Contact_triggered();
+
+    void on_actionExit_Dialer_triggered();
 
 private:
     Ui::MainWindow *ui;

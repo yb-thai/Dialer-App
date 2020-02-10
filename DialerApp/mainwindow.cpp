@@ -23,17 +23,29 @@ MainWindow::MainWindow(QWidget *parent)
     QGraphicsDropShadowEffect* dialerEffect = new QGraphicsDropShadowEffect();
     QGraphicsDropShadowEffect* tableEffect = new QGraphicsDropShadowEffect();
     QGraphicsDropShadowEffect* headerEffect = new QGraphicsDropShadowEffect();
+
     dialerEffect->setBlurRadius(10);
     tableEffect->setBlurRadius(10);
     headerEffect->setBlurRadius(10);
+
     ui->dialerGroupBox->setGraphicsEffect(dialerEffect);
     ui->tableView->setGraphicsEffect(tableEffect);
     ui->headerGroupBox->setGraphicsEffect(headerEffect);
 
-    // customize scroll bar on phone book
-    ui->tableView->verticalScrollBar()->setStyleSheet("background-color: Gray);");
 
-
+    // add press color to dialer pad
+    ui->oneButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->twoButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->threeButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->fourButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->fiveButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->sixButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->sevenButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->eightButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->nineButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->zeroButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->starButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
+    ui->pundButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
 
 
 
@@ -49,7 +61,8 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_addressBookLabel_clicked()
+
+void MainWindow::on_actionAdd_Contact_triggered()
 {
     // open local file dialog
     QString fileName = QFileDialog::getOpenFileName(this,
@@ -266,4 +279,10 @@ void MainWindow::on_pundButton_clicked()
     ui->numberLabel->setText(temp);
 }
      myModel->setFilterString(temp);
+}
+
+
+void MainWindow::on_actionExit_Dialer_triggered()
+{
+     QApplication::quit();
 }
