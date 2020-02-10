@@ -32,6 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView->setGraphicsEffect(tableEffect);
     ui->headerGroupBox->setGraphicsEffect(headerEffect);
 
+    //scroll bar color
+    ui->tableView->verticalScrollBar()->setStyleSheet("background-color: Gray"
+                                                      );
 
     // add press color to dialer pad
     ui->oneButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
@@ -96,6 +99,7 @@ void MainWindow::on_oneButton_clicked()
         ui->numberLabel->setText(temp);
     }
         myModel->setFilterString(temp);
+
 
 }
 

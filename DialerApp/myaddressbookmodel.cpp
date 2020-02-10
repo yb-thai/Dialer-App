@@ -85,6 +85,8 @@ void MyAddressBookModel::setFilterString(QString fStr)
     }
 
 
+
+
 //    std::vector<int> temp;
 //    for(int i = 0; i < filteredIndex.size(); i++) {
 //        if (phoneNumbers[filteredIndex[i]].startsWith(fStr)) {

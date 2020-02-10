@@ -624,9 +624,9 @@ background-color: rgb(87,220,123);</string>
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>120</y>
+      <y>20</y>
       <width>311</width>
-      <height>301</height>
+      <height>401</height>
      </rect>
     </property>
     <property name="font">
@@ -699,7 +699,7 @@ border-radius: 15px;
      <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QGroupBox" name="headerGroupBox">

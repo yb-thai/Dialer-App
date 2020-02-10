@@ -253,7 +253,7 @@ public:
         label_9->setPixmap(QPixmap(QString::fromUtf8(":/phone(1).png")));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(290, 120, 311, 301));
+        tableView->setGeometry(QRect(290, 20, 311, 401));
         tableView->setFont(font);
         tableView->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 15px;\n"
@@ -278,7 +278,7 @@ public:
         numberLabel->setStyleSheet(QString::fromUtf8(""));
         numberLabel->setFrameShape(QFrame::NoFrame);
         numberLabel->setFrameShadow(QFrame::Plain);
-        numberLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        numberLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         headerGroupBox = new QGroupBox(centralwidget);
         headerGroupBox->setObjectName(QString::fromUtf8("headerGroupBox"));
         headerGroupBox->setGeometry(QRect(20, 20, 221, 51));
