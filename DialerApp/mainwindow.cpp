@@ -240,8 +240,9 @@ void MainWindow::on_callButton_clicked()
         warning.exec();
     } else {
     QMessageBox calling;
-    QString call = "Calling " + temp + "  ";
+    QString call = "Calling:  " + temp + "  ";
     calling.setWindowTitle("Connecting...");
+    calling.setStandardButtons(QMessageBox::Close);
     calling.setText(call);
     calling.exec();
     }
