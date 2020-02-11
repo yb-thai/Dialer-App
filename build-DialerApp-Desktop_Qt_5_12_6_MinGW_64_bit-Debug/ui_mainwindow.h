@@ -55,7 +55,7 @@ public:
     QLabel *twoTextLabel_6;
     QLabel *twoTextLabel_7;
     QLabel *twoTextLabel_8;
-    QLabel *label_9;
+    QLabel *label;
     QTableView *tableView;
     QLabel *numberLabel;
     QGroupBox *headerGroupBox;
@@ -173,11 +173,14 @@ public:
         backspaceLabel->setIconSize(QSize(28, 22));
         callButton = new QPushButton(dialerGroupBox);
         callButton->setObjectName(QString::fromUtf8("callButton"));
-        callButton->setGeometry(QRect(70, 250, 81, 31));
+        callButton->setGeometry(QRect(80, 250, 61, 31));
         callButton->setStyleSheet(QString::fromUtf8("background-color: rgb(87,220,123);\n"
 "border-style: none;\n"
 "border-radius: 15px;\n"
 ""));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8("../phone(1).png"), QSize(), QIcon::Normal, QIcon::Off);
+        callButton->setIcon(icon1);
         twoTextLabel = new QLabel(dialerGroupBox);
         twoTextLabel->setObjectName(QString::fromUtf8("twoTextLabel"));
         twoTextLabel->setGeometry(QRect(100, 50, 21, 16));
@@ -245,15 +248,14 @@ public:
 "border: none;"));
         twoTextLabel_8->setFrameShadow(QFrame::Plain);
         twoTextLabel_8->setAlignment(Qt::AlignCenter);
-        label_9 = new QLabel(dialerGroupBox);
-        label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(100, 250, 21, 31));
-        label_9->setStyleSheet(QString::fromUtf8("border: none;\n"
-"background-color: rgb(87,220,123);"));
-        label_9->setPixmap(QPixmap(QString::fromUtf8(":/phone(1).png")));
+        label = new QLabel(dialerGroupBox);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(30, 253, 21, 21));
+        label->setPixmap(QPixmap(QString::fromUtf8("../star.jpg")));
+        label->setScaledContents(true);
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(290, 20, 311, 401));
+        tableView->setGeometry(QRect(300, 20, 311, 401));
         tableView->setFont(font);
         tableView->setStyleSheet(QString::fromUtf8("background-color: white;\n"
 "border-radius: 15px;\n"
@@ -386,7 +388,7 @@ public:
         twoTextLabel_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">PQRS</span></p></body></html>", nullptr));
         twoTextLabel_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">TUV</span></p></body></html>", nullptr));
         twoTextLabel_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">WXYZ</span></p></body></html>", nullptr));
-        label_9->setText(QString());
+        label->setText(QString());
         numberLabel->setText(QString());
         headerGroupBox->setTitle(QString());
         label_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#57dc7b;\">DIALPAD</span></p></body></html>", nullptr));

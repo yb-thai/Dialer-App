@@ -234,12 +234,14 @@ void MainWindow::on_zeroButton_clicked()
 void MainWindow::on_callButton_clicked()
 {
     QMessageBox warning;
-    if(temp.size() == 0){
-        warning.setText("Type in the number or select from phonebook");
+    if(temp.size() == 0 || temp.size() < 12){
+        warning.setWindowTitle("Follow the instruction");
+        warning.setText("Type in the full number or select from phonebook");
         warning.exec();
     } else {
     QMessageBox calling;
     QString call = "Calling " + temp + "  ";
+    calling.setWindowTitle("Connecting...");
     calling.setText(call);
     calling.exec();
     }

@@ -3,6 +3,7 @@
 #include <QMessageBox>
 #include <iostream>
 #include <QTextStream>
+#include <QCharRef>
 
 MyAddressBookModel::MyAddressBookModel(QObject *parent)
     :QAbstractTableModel(parent)
@@ -41,7 +42,7 @@ void MyAddressBookModel::openFile(QString filePath)
     QFile file(filePath);
 
     if(!file.open(QIODevice::ReadOnly)){
-        QMessageBox::information(0, "error", file.errorString());
+        QMessageBox::information(0, "Error", file.errorString());
         return;
     }
 
@@ -85,8 +86,6 @@ void MyAddressBookModel::setFilterString(QString fStr)
     }
 
 
-
-
 //    std::vector<int> temp;
 //    for(int i = 0; i < filteredIndex.size(); i++) {
 //        if (phoneNumbers[filteredIndex[i]].startsWith(fStr)) {
@@ -97,3 +96,49 @@ void MyAddressBookModel::setFilterString(QString fStr)
 
     emit layoutChanged();
 }
+
+QString getDialString(QChar digit) {
+
+    QMap<QChar, QString> dialString;
+    dialString['2'] = "abc";
+    dialString['3'] = "def";
+    dialString['4'] = "ghi";
+    dialString['5'] = "jkl";
+    dialString['6'] = "mno";
+    dialString['7'] = "pqrs";
+    dialString['8'] = "tuv";
+    dialString['9'] = "wxyz";
+
+    return dialString[digit];
+}
+
+
+void makeCombination(std::vector<QString> &combs, QString digits, int current, QString substr){
+    if (current == digits.size()) {
+           combs.push_back(substr);
+           return;
+       } else {
+           QString digitString = getDialString(digits[current]);
+
+           for (int i = 0; i < digitString.size(); i++) {
+               makeCombination(combs, digits, current + 1, substr + digitString[i]);
+           }
+       }
+   }
+
+
+std::vector<QString> letterCombinations(QString digits) {
+    std::vector<QString> combs;
+
+    if (!digits.isEmpty()) {
+        makeCombination(combs, digits, 0, "");
+    }
+
+    return combs;
+}
+
+
+
+
+
+

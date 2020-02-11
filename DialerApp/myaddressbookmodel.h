@@ -25,6 +25,11 @@ public:
     QString getFirstNames (int index);
     QString getLastNames (int index);
 
+
+    QString getDialString(char digit);
+    void makeCombination(std::vector<QString>& combs, QString digits, int current, QString substr);
+    std::vector<QString>letterCombinations(QString digits);
+
     void setFilterString(QString fStr);
 
 private:
@@ -32,6 +37,7 @@ private:
     std::vector<QString> lastNames;
     std::vector<QString> phoneNumbers;
     std::vector<int> filteredIndex;
+
 };
 
 #endif // MYADDRESSBOOKMODEL_H
