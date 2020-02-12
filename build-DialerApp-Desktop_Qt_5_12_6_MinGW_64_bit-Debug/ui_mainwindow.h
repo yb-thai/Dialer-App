@@ -242,7 +242,7 @@ public:
         twoTextLabel_7->setAlignment(Qt::AlignCenter);
         twoTextLabel_8 = new QLabel(dialerGroupBox);
         twoTextLabel_8->setObjectName(QString::fromUtf8("twoTextLabel_8"));
-        twoTextLabel_8->setGeometry(QRect(170, 170, 21, 16));
+        twoTextLabel_8->setGeometry(QRect(160, 170, 41, 16));
         twoTextLabel_8->setFont(font3);
         twoTextLabel_8->setStyleSheet(QString::fromUtf8("\n"
 "border: none;"));
@@ -380,14 +380,14 @@ public:
         pundButton->setText(QApplication::translate("MainWindow", "#", nullptr));
         backspaceLabel->setText(QString());
         callButton->setText(QString());
-        twoTextLabel->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">ABC</span></p></body></html>", nullptr));
-        twoTextLabel_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">DEF</span></p></body></html>", nullptr));
-        twoTextLabel_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">GHI</span></p></body></html>", nullptr));
-        twoTextLabel_4->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">JKL</span></p></body></html>", nullptr));
-        twoTextLabel_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">MNO</span></p></body></html>", nullptr));
-        twoTextLabel_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">PQRS</span></p></body></html>", nullptr));
-        twoTextLabel_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">TUV</span></p></body></html>", nullptr));
-        twoTextLabel_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#b9b9b9;\">WXYZ</span></p></body></html>", nullptr));
+        twoTextLabel->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">ABC</span></p></body></html>", nullptr));
+        twoTextLabel_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">DEF</span></p></body></html>", nullptr));
+        twoTextLabel_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">GHI</span></p></body></html>", nullptr));
+        twoTextLabel_4->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">JKL</span></p></body></html>", nullptr));
+        twoTextLabel_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">MNO</span></p></body></html>", nullptr));
+        twoTextLabel_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">PQRS</span></p></body></html>", nullptr));
+        twoTextLabel_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">TUV</span></p></body></html>", nullptr));
+        twoTextLabel_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" color:#919191;\">WXYZ</span></p></body></html>", nullptr));
         label->setText(QString());
         numberLabel->setText(QString());
         headerGroupBox->setTitle(QString());
