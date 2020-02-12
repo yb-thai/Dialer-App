@@ -74,7 +74,6 @@ QString MyAddressBookModel::getPhoneNumber(int index)
 }
 
 
-
 // filtered the starting number
 void MyAddressBookModel::setFilterString(QString fStr)
 {
@@ -84,8 +83,9 @@ void MyAddressBookModel::setFilterString(QString fStr)
             filteredIndex.push_back(i);
         }
     }
+     emit layoutChanged();
 
-
+//    alternative funtion for filter string
 //    std::vector<int> temp;
 //    for(int i = 0; i < filteredIndex.size(); i++) {
 //        if (phoneNumbers[filteredIndex[i]].startsWith(fStr)) {
@@ -94,9 +94,14 @@ void MyAddressBookModel::setFilterString(QString fStr)
 //    }
 //    filteredIndex = temp;
 
-    emit layoutChanged();
+
 }
 
+
+
+
+
+// keypad assign
 QString getDialString(QChar digit) {
 
     QMap<QChar, QString> dialString;
@@ -112,24 +117,23 @@ QString getDialString(QChar digit) {
     return dialString[digit];
 }
 
-
-void makeCombination(std::vector<QString> &combs, QString digits, int current, QString substr){
+//combination tracking function
+void makeCombination(std::vector<QString> &combs, QString digits, int current, QString fStr){
     if (current == digits.size()) {
-           combs.push_back(substr);
+           combs.push_back(fStr);
            return;
        } else {
            QString digitString = getDialString(digits[current]);
 
            for (int i = 0; i < digitString.size(); i++) {
-               makeCombination(combs, digits, current + 1, substr + digitString[i]);
+               makeCombination(combs, digits, current + 1, fStr + digitString[i]);
            }
        }
    }
 
-
 std::vector<QString> letterCombinations(QString digits) {
     std::vector<QString> combs;
-
+    // if press 1 or 0
     if (!digits.isEmpty()) {
         makeCombination(combs, digits, 0, "");
     }

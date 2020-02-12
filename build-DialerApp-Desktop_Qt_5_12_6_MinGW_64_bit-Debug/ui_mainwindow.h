@@ -280,7 +280,7 @@ public:
         numberLabel->setStyleSheet(QString::fromUtf8(""));
         numberLabel->setFrameShape(QFrame::NoFrame);
         numberLabel->setFrameShadow(QFrame::Plain);
-        numberLabel->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        numberLabel->setAlignment(Qt::AlignCenter);
         headerGroupBox = new QGroupBox(centralwidget);
         headerGroupBox->setObjectName(QString::fromUtf8("headerGroupBox"));
         headerGroupBox->setGeometry(QRect(20, 20, 221, 51));

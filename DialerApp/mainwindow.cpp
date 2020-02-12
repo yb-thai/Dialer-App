@@ -50,10 +50,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->starButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
     ui->pundButton->setStyleSheet("QPushButton:pressed {background-color: #dfdfdf}");
 
-
-
-
-
 }
 
 
@@ -115,6 +111,8 @@ void MainWindow::on_twoButton_clicked()
     ui->numberLabel->setText(temp);
 }
     myModel->setFilterString(temp);
+
+
 }
 
 void MainWindow::on_threeButton_clicked()
@@ -231,6 +229,8 @@ void MainWindow::on_zeroButton_clicked()
 
 }
 
+
+// call button
 void MainWindow::on_callButton_clicked()
 {
     QMessageBox warning;
@@ -247,19 +247,22 @@ void MainWindow::on_callButton_clicked()
     calling.exec();
     }
 
+    temp.clear();
+    ui->numberLabel->setText(temp);
+
 }
 
+// delete button
 void MainWindow::on_backspaceLabel_clicked()
 {
     temp.chop(1);
     ui->numberLabel->setText(temp);
     myModel->setFilterString(temp);
 
-
 }
 
 
-
+// extra button
 void MainWindow::on_starButton_clicked()
 {
     if(temp.size() < 12){
@@ -288,7 +291,7 @@ void MainWindow::on_pundButton_clicked()
      myModel->setFilterString(temp);
 }
 
-
+// exit the program using menubar
 void MainWindow::on_actionExit_Dialer_triggered()
 {
      QApplication::quit();

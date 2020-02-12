@@ -702,7 +702,7 @@ border-radius: 15px;
      <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QGroupBox" name="headerGroupBox">
